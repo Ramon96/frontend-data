@@ -1,8 +1,41 @@
 {
+  "name": "frontend-data",
+  "version": "1.0.0",
+  "description": "This is an further iteration on the static map of the project functional programming. The goal of this project is to add meaningfull interaction.",
+  "main": "index.js",
   "scripts": {
-    "build": "rollup -c"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ramon96/frontend-data.git"
+  },
+  "keywords": [
+    "map",
+    "nmvw",
+    "interaction",
+    "frontend",
+    "data",
+    "visualisation"
+  ],
+  "author": "Ramon Meijers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ramon96/frontend-data/issues"
+  },
+  "homepage": "https://github.com/Ramon96/frontend-data#readme",
   "devDependencies": {
-    "rollup": "latest"
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "d3": "^5.14.2",
+    "d3-geo-projection": "^2.7.1",
+    "d3-request": "^1.0.6",
+    "d3-tip": "^0.9.1",
+    "topojson": "^3.0.2"
   }
 }
