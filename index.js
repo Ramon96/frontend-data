@@ -49,6 +49,8 @@ SELECT ?title ?typeLabel ?long ?lat ?plaats (SAMPLE(?cho) as ?filtered)  (COUNT(
 
 
 getQuery(endpoint, countQuery).then(data =>{
+
+
   init(data)
 })
 
@@ -59,32 +61,29 @@ function init(data){
   .key(function(d) { return d.typeLabel; })
   .entries(data);
 
-  console.log(maskData)
+// console.log(data[0].typeLabel)
 
-  console.log(
-    maskData.map(d => {
-     return d.values.length
-    })
-  )
 // map
   const svgMap = select('.map');
   const projection = geoNaturalEarth1();
   const pathGenerator = geoPath().projection(projection);
   const gMap = svgMap.append('g');
 
-// barChart 
-  const barTooltip = d3.tip().attr('class', 'd3-tip').html(function (d) {
-    const returnValue = d.typeLabel.value + ": " + d.choCount.value;
-    return returnValue ;
-  });
+  // barChart 
+    const barTooltip = d3.tip().attr('class', 'd3-tip').html(function (d) {
+      const returnValue = d.typeLabel + ": " + d.count;
+      return returnValue ;
+    });
   const svgBar = select('.barChart')
   .call(barTooltip);
   const width = +svgBar.attr("width");
   const height = +svgBar.attr("height");
-  //const xValue = d => +d.choCount.value;
-  const xValue = d => +d.choCount.value;
-  console.log(xValue)
-  const yValue = d=> d.typeLabel.value;
+
+  // console.log(d)
+  const xValue = d => +d.count;
+  const yValue = d=> d.typeLabel;
+
+
   const margin = {top: 20, right : 100, left: 180, bottom: 30};
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
@@ -97,7 +96,7 @@ function init(data){
   	.range([0, innerHeight])
   	.padding(0.1)
   
-  const items = data.map(index => index.typeLabel.value);
+  const items = data.map(index => index.typeLabel);
   const colorscale = d3.scaleOrdinal()
   .domain(items)
   .range(d3.schemeCategory10);
@@ -108,6 +107,7 @@ function init(data){
   g.append('g').call(axisLeft(yScale));
   g.append('g').call(axisBottom(xScale))
   .attr('transform', `translate(0, ${innerHeight})`)
+
   	
 	g.selectAll('rect')
   	.data(data)
@@ -117,14 +117,14 @@ function init(data){
   	.attr('width', d => xScale(xValue(d)))
     .attr('height', yScale.bandwidth())
     .style('fill', function(d){
-      return colorscale(d.typeLabel.value)
+      return colorscale(d.typeLabel)
     })
     .on('mouseenter', barTooltip.show)
     .on('mouseleave', barTooltip.hide)
   	.append('title')
       .text(d => xValue(d))
 
-  
+    
   g.append('text')
     .text('Hoeveelheid maskers per functie')
     
@@ -177,13 +177,14 @@ legend.append("text")
             .text(d => countryName[d.id]);
     
       gMap.selectAll('circle')
-        .data(data)
+        .data(maskData[0].values)
                 .enter().append("circle")
                 .attr("transform", function(d) {
-                  return "translate(" + projection([d.long.value, d.lat.value]) + ")";
+                 //console.log(d.values.map(item => item.long))
+                  return "translate(" + projection([d.long, d.lat]) + ")";
                 })
                 .style('fill', function(d){
-                  return colorscale(d.typeLabel.value)
+                  return colorscale(d.typeLabel)
                 })
                 .transition()
                     .delay(1000)
