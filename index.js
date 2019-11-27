@@ -121,6 +121,7 @@ function init(data){
     })
     .on('mouseenter', barTooltip.show)
     .on('mouseleave', barTooltip.hide)
+    .on('click', function(d){hightlightDatapoint(d.typeLabel)})
   	.append('title')
       .text(d => xValue(d))
 
@@ -192,6 +193,11 @@ legend.append("text")
                     .ease(d3.easeBounce)
                 .attr("r", 1)
   });
+
+  function hightlightDatapoint(option){
+    const selection = maskData.filter(subject => subject.key == option)
+    console.log(selection[0].values)
+  }
 
 }
 
