@@ -70,14 +70,19 @@ function init(data) {
     .range(d3.schemeCategory10);
 
   // map
-  const svgMap = select('.map');
+  const datapointToolTip = d3.tip().attr('class', 'd3-tip').html(function (d) {
+    const returnValue = d.title;
+    return returnValue;
+  });
+  const svgMap = select('.map')
+  .call(datapointToolTip);
   const projection = geoNaturalEarth2();
   const pathGenerator = geoPath().projection(projection);
   const gMap = svgMap.append('g');
 
   // barChart 
-
-
+  
+  
   createBarchart(data);
 
 
@@ -96,20 +101,20 @@ function init(data) {
     });
     
 
+
     const svgBar = select('.barChart')
       .call(barTooltip);
     const width = +svgBar.attr("width");
     const height = +svgBar.attr("height");
 
-    // console.log(d)
     const xValue = d => +d.value.amount;
     const yValue = d => d.key;
 
     const margin = {
       top: 20,
-      right: 10,
+      right: 20,
       left: 180,
-      bottom: 30
+      bottom: 40
     };
 
     const innerWidth = width - margin.left - margin.right;
@@ -134,8 +139,11 @@ function init(data) {
 
     g.append('g').call(axisBottom(xScale))
       .attr('transform', `translate(0, ${innerHeight})`)
+      .selectAll('.tick text')
+      .attr('transform', `rotate(35)`)
+      .style("text-anchor", "start")
 
-    console.log(newData)
+
 
     g.selectAll('rect')
       .data(newData)
@@ -162,6 +170,7 @@ function init(data) {
 
     g.append('text')
       .text('Hoeveelheid maskers per functie')
+      .attr('class', 'barTitle')
   }
 
   //map code
@@ -214,6 +223,8 @@ function init(data) {
       //enter
     point.data(data).enter()
       .append("circle")
+      .on("mouseenter", datapointToolTip.show)
+      .on("mouseleave", datapointToolTip.hide)
       .attr("transform", function (d) {
         return "translate(" + projection([d.long, d.lat]) + ")";
       })
