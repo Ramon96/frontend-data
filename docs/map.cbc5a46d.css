@@ -1,0 +1,51 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+    background-color: #232323;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  svg{
+      margin: 10vh auto 0; 
+  }
+  
+  body:hover{
+      cursor: grab;
+  }
+  .country{
+      fill: #1c0637;
+      stroke: grey;
+    stroke-width: 0.05px;
+  }
+  
+  .country:hover{
+      cursor: pointer;
+    fill: #2c0957;
+  }
+  
+  .sphere{
+    fill: #161616;
+  }
+  
+  
+  circle{
+      stroke: black;
+    stroke-width: 0.01px;
+  }
+  
+  h1{
+    font-family: 'sans-serif';
+      background: white;
+    margin: -5px 0;
+    padding: 15px 5px;
+    text-align: center;
+  }
+  
+  .legend{
+      fill: white;  
+  }
+  
+
+/*# sourceMappingURL=/map.cbc5a46d.css.map */
