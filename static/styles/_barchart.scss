@@ -1,7 +1,22 @@
 .barChart{
     border: solid 3px black;
+    g{
+        rect{
+            opacity: 0.4;
+            transition: .9s;
+            cursor: pointer;
+            &.active{
+                opacity: 1;
+
+            }
+        }
+    }
 }
 
 .tick text{
     font-size: 1.5em;
+}
+
+.bar {
+
 }

@@ -2,6 +2,17 @@
   border: solid 3px black;
 }
 
+.barChart g rect {
+  opacity: 0.4;
+  -webkit-transition: .9s;
+  transition: .9s;
+  cursor: pointer;
+}
+
+.barChart g rect.active {
+  opacity: 1;
+}
+
 .tick text {
   font-size: 1.5em;
 }

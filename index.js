@@ -25,9 +25,6 @@ import {
   feature
 } from 'topojson';
 
-
-
-
 const endpoint = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-39/sparql";
 
 const countQuery = `
@@ -153,6 +150,11 @@ function init(data) {
       .on('mouseleave', barTooltip.hide)
       .on('click', function (d) {
         hightlightDatapoint(d.key)
+        g.selectAll('rect')
+          .classed('active', false);
+          
+
+        d3.select(this).attr('class', 'active')
       })
       .append('title')
       .text(d => xValue(d))
@@ -167,29 +169,6 @@ function init(data) {
     gMap.attr('transform', event.transform);
   }));
 
-  const legend = svgMap.selectAll(".legend")
-    .data(colorscale.domain())
-    .enter().append("g")
-    .attr("class", "legend")
-    .attr("transform", function (d, i) {
-      return "translate(0," + i * 20 + ")";
-    })
-
-
-  legend.append("rect")
-    .attr("x", 190 - 18)
-    .attr("width", 18)
-    .attr("height", 18)
-    .style("fill", colorscale);
-
-  legend.append("text")
-    .attr("x", 185 - 24)
-    .attr("y", 9)
-    .attr("dy", ".35em")
-    .style("text-anchor", "end")
-    .text(function (d) {
-      return d;
-    })
 
   gMap.append('path')
     .attr('class', 'sphere')
@@ -225,6 +204,10 @@ function init(data) {
     console.log(data)
     const point = gMap.selectAll('circle');
     point.data(data)
+    .transition()
+    .delay((d, i) => {return i * 1})
+    .duration(700)
+    .ease(d3.easeQuadOut)
       .attr("transform", function (d) {
         //console.log(d.values.map(item => item.long))
         return "translate(" + projection([d.long, d.lat]) + ")";
@@ -232,10 +215,7 @@ function init(data) {
       .style('fill', function (d) {
         return colorscale(d.typeLabel)
       })
-      .transition()
-      .delay(1000)
-      .duration(700)
-      .ease(d3.easeBounce)
+
       .attr("r", 1);
 
     point.data(data).enter()
@@ -248,7 +228,7 @@ function init(data) {
         return colorscale(d.typeLabel)
       })
       .transition()
-      .delay(1000)
+      .delay((d, i) => {return i * 0.3})
       .duration(700)
       .ease(d3.easeBounce)
       .attr("r", 1);
