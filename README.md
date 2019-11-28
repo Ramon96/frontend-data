@@ -45,18 +45,23 @@ dist
  
 # Things I wish I had learned
  * Im actually very statisfy'd with what I've learned these 2 weeks!
- (Things I wish I did: Kept my clone clean)
+ (Things I wish I did: Kept my code clean)
  
 # wiki 
 Please check out my [Wiki](https://github.com/Ramon96/frontend-data/wiki)
 
 # Credits
-
+ I would like to thank
+ Laurens Arnoudse for hi's lecture's and amazing example's on his vizhub.
+ Tomas Stolp for explaining D3 functions that where kind of tricky to my.
+ Manouk Knappe for showing an solution for overlapping text.
  
- # Data
+ Please check out this page for more detailed credits.
+ 
+# Data
  The data used in this project is data acuired from the NMVW database collection with the use of Sparql.
  I am getting the Mask by function. They also require to have a lat and long value. 
- For mor information about the Data check out [this](https://github.com/Ramon96/functional-programming/wiki/1.5-De-spaqrl-Query) wiki page.
+ For mor information about the Data check out [this]() wiki page.
 
 # License
 [MIT @ Ramon Meijers](https://github.com/Ramon96/frontend-data/blob/master/LICENSE)
