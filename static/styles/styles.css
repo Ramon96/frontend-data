@@ -17,10 +17,6 @@
   font-size: 1.5em;
 }
 
-svg {
-  margin: 10vh auto 0;
-}
-
 .country {
   fill: #1c0637;
   stroke: grey;
@@ -36,23 +32,6 @@ svg {
   fill: #161616;
 }
 
-circle {
-  stroke: black;
-  stroke-width: 0.01px;
-}
-
-h1 {
-  font-family: 'sans-serif';
-  background: white;
-  margin: -5px 0;
-  padding: 15px 5px;
-  text-align: center;
-}
-
-.legend {
-  fill: white;
-}
-
 body {
   margin: 0px;
   display: -webkit-box;
@@ -62,6 +41,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+h1 {
+  font-family: 'sans-serif';
+  background: white;
+  margin: -5px 0;
+  padding: 15px 5px;
+  text-align: center;
 }
 
 .d3-tip {

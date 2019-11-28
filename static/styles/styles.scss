@@ -6,6 +6,15 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+h1{
+  font-family: 'sans-serif';
+    background: white;
+  margin: -5px 0;
+  padding: 15px 5px;
+  text-align: center;
+}
+
   .d3-tip {
     line-height: 1;
     font-weight: bold;

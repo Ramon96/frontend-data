@@ -11,12 +11,13 @@ import {
   json,
   tsv,
   geoPath,
-  geoNaturalEarth1,
   zoom,
   event
 } from 'd3';
 
 import * as d3 from 'd3';
+
+import {geoNaturalEarth2} from 'd3-geo-projection';
 
 import d3Tip from 'd3-tip';
 d3.tip = d3Tip;
@@ -50,8 +51,6 @@ SELECT ?title ?typeLabel ?long ?lat ?plaats (SAMPLE(?cho) as ?filtered)  (COUNT(
 
 
 getQuery(endpoint, countQuery).then(data => {
-
-
   init(data)
 })
 
@@ -69,12 +68,10 @@ function init(data) {
   const colorscale = d3.scaleOrdinal()
     .domain(items)
     .range(d3.schemeCategory10);
-    console.log(items)
-  // console.log(data[0].typeLabel)
 
   // map
   const svgMap = select('.map');
-  const projection = geoNaturalEarth1();
+  const projection = geoNaturalEarth2();
   const pathGenerator = geoPath().projection(projection);
   const gMap = svgMap.append('g');
 
@@ -156,7 +153,6 @@ function init(data) {
 
         d3.select(this).attr('class', 'active')
       })
-      .append('title')
       .text(d => xValue(d))
 
 
@@ -209,7 +205,6 @@ function init(data) {
     .duration(700)
     .ease(d3.easeQuadOut)
       .attr("transform", function (d) {
-        //console.log(d.values.map(item => item.long))
         return "translate(" + projection([d.long, d.lat]) + ")";
       })
       .style('fill', function (d) {
@@ -238,9 +233,7 @@ function init(data) {
 
   function hightlightDatapoint(option) {
     const selection = maskData.filter(subject => subject.key == option).reduce(subject => subject)
-
     plotPoints(selection.values)
-    console.log(selection.values)
 
   }
 
