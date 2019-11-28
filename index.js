@@ -107,15 +107,18 @@ function init(data) {
 
     const margin = {
       top: 20,
-      right: 100,
+      right: 10,
       left: 180,
       bottom: 30
     };
+
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     const xScale = scaleLinear()
       .domain([0, max(newData, xValue)])
       .range([0, innerWidth])
+      
+
 
     const yScale = scaleBand()
       .domain(newData.map(yValue))
@@ -128,6 +131,7 @@ function init(data) {
       .attr('transform', `translate(${margin.left}, ${margin.top})`)
 
     g.append('g').call(axisLeft(yScale));
+
     g.append('g').call(axisBottom(xScale))
       .attr('transform', `translate(0, ${innerHeight})`)
 
@@ -190,14 +194,10 @@ function init(data) {
       .attr('d', d => pathGenerator(d))
       .append('title')
       .text(d => countryName[d.id]);
-
-    //plotPoints(maskData)
-
-
   });
 
   function plotPoints(data) {
-    console.log(data)
+    // update
     const point = gMap.selectAll('circle');
     point.data(data)
     .transition()
@@ -210,13 +210,11 @@ function init(data) {
       .style('fill', function (d) {
         return colorscale(d.typeLabel)
       })
-
       .attr("r", 1);
-
+      //enter
     point.data(data).enter()
       .append("circle")
       .attr("transform", function (d) {
-        //console.log(d.values.map(item => item.long))
         return "translate(" + projection([d.long, d.lat]) + ")";
       })
       .style('fill', function (d) {

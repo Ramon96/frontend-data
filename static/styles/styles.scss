@@ -15,6 +15,11 @@ h1{
   text-align: center;
 }
 
+  .container{
+    display: flex;
+    margin: 10px;
+  }
+
   .d3-tip {
     line-height: 1;
     font-weight: bold;
