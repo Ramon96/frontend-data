@@ -4,52 +4,54 @@
 ![Maskers op functie over de hele wereld](https://github.com/Ramon96/frontend-data/blob/master/documantion/demo.gif)
 
 # Concept
-This is an iteration of my previous concept of functional-programming. During that project I made an static map that shows the locations of mask with functions. During this project I plan on 
+This is an iteration of my previous concept of functional-programming. During that project I made an static map that shows the locations of mask with functions. During this project I plan on adding interaction in a way that people intrested in the data are able to analyze it and find intresting pattern's.
 
 # Description
-During this course I created a data visualisation with the help of VizHub. Building this project Data of the NMVW was used.
+During this course I created a data visualisation with the help of D3, I worked on this project locally and builded with the use of Parcel. During this project Data of the NMVW was used.
 This project is made with [D3](https://d3js.org/)
 
 # Target Audience
-This visualisation was build in mind for someone to find pattern's in the data. This could easily be replaced with another subject to get a better understanding of the collection. This would benefit someone like Rik.
+This visualisation was build in mind for someone to find pattern's in the data. This could easily be replaced with another subject to get a better understanding of the collection. This would benefit someone like Rik. This Visualisation might be intresting for museum visitors now that there is some interaction added to the visualisation. 
 
 # Installation
 You want to clone this project to a local folder using the following code. 
-`https://github.com/Ramon96/functional-programming.git`
+`https://github.com/Ramon96/frontend-data.git`
 
 # .gitignore
-The data cleanup contains some very sensetive information. 
-Please don't dox your class mates and make use of a gitignore.
+This project uses node_modules other people don't need that and for that reason it is added to the git ignore. I don't need the build folder since im using netlify to build.
 ```
-input.js
-input
+node_modules
+dist
+.cache
 ```
 
 # Features
 - [x] Zooming
 - [x] Dragging
+- [x] Hovering for tooltips
+- [x] Filtering on category
 
 # Known Bugs 
  * It might take a while for the map to load.
+ * Able to drag out the map out of its view
  
 # Upcomming features
-- [ ] Hovering over the orbs for more information
+- [ ] multiple selection filtering
 
 # Things I have learned during these 2 weeks
- * Using some of the basic funtionality of D3
- * Making my own Sparql query's
- * How to use Promise's
+ * Enter update exit pattern
+ * Making fancy transition 
+ * Using another visualisation to respond with another one
  
 # Things I wish I had learned
  * Im actually very statisfy'd with what I've learned these 2 weeks!
+ (Things I wish I did: Kept my clone clean)
  
 # wiki 
-Please check out my [Wiki](https://github.com/Ramon96/functional-programming/wiki)
+Please check out my [Wiki](https://github.com/Ramon96/frontend-data/wiki)
 
 # Credits
-I would like to refer to my [wiki](https://github.com/Ramon96/functional-programming/wiki/2.0-Credits) for more detailed credits
- * Tomas Stolp (Helping me understand how to handle returned data)
- * Laurens Aarnoudse (Providing alot of usefull example's)
+
  
  # Data
  The data used in this project is data acuired from the NMVW database collection with the use of Sparql.
@@ -57,5 +59,5 @@ I would like to refer to my [wiki](https://github.com/Ramon96/functional-program
  For mor information about the Data check out [this](https://github.com/Ramon96/functional-programming/wiki/1.5-De-spaqrl-Query) wiki page.
 
 # License
-[MIT @ Ramon Meijers](https://github.com/Ramon96/functional-programming/blob/master/LICENSE)
+[MIT @ Ramon Meijers](https://github.com/Ramon96/frontend-data/blob/master/LICENSE)
 
