@@ -14,7 +14,7 @@ During this course I created a data visualisation with the help of D3, I worked 
 This project is made with [D3](https://d3js.org/)
 
 # Target Audience
-This visualisation was build in mind for someone to find pattern's in the data. This could easily be replaced with another subject to get a better understanding of the collection. This would benefit someone like Rik. This Visualisation might be intresting for museum visitors now that there is some interaction added to the visualisation. 
+This visualisation was build in mind for someone to find pattern's in the data. This could easily be replaced with another subject to get a better understanding of the collection. This would benefit someone like Rik from national museum of world cultures. This Visualisation might be intresting for museum visitors now that there is some interaction added to the visualisation. 
 
 # Installation
 You want to clone this project to a local folder using the following code. 
