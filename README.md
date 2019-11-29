@@ -17,6 +17,17 @@ This visualisation was build in mind for someone to find pattern's in the data. 
 You want to clone this project to a local folder using the following code. 
 `https://github.com/Ramon96/frontend-data.git`
 
+**Build** 
+This project makes use of the bundler called Parcel. Parcel compiles the code in one unreadable code that is minified and is supported by all browsers. In short it makes our life easier. 
+
+When Developing make use of the command
+`npm run dev` 
+This will set you up with a live server
+
+for building you could run 
+`npm run build`
+but this is not needed since netlify does this for us.
+
 # .gitignore
 This project uses node_modules other people don't need that and for that reason it is added to the git ignore. I don't need the build folder since im using netlify to build.
 ```
