@@ -64,13 +64,18 @@ dist
 # wiki 
 Please check out my [Wiki](https://github.com/Ramon96/frontend-data/wiki)
 
+# Update enter exit
+During this project I learned what is known the update enter exit pattern.
+please read [this](https://github.com/Ramon96/frontend-data/wiki/1.4-Enter-Update-Exit-loop) wiki page to see how it works.
+[here](https://github.com/Ramon96/frontend-data/blob/master/index.js) you can find the code used for the explanation.
+
 # Credits
  I would like to thank
  Laurens Arnoudse for hi's lecture's and amazing example's on his vizhub.
  Tomas Stolp for explaining D3 functions that where kind of tricky to my.
  Manouk Knappe for showing an solution for overlapping text.
  
- Please check out this page for more detailed credits.
+ Please check out [this](https://github.com/Ramon96/frontend-data/wiki/2.0-Credits) page for more detailed credits.
  
 # Data
  The data used in this project is data acuired from the NMVW database collection with the use of Sparql.
