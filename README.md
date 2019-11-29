@@ -67,6 +67,7 @@ dist
  
 # wiki 
 Please check out my [Wiki](https://github.com/Ramon96/frontend-data/wiki)
+Here you can find my proces of my documentation and learning goals.
 
 # Update enter exit
 During this project I learned what is known the update enter exit pattern.
