@@ -41,9 +41,13 @@ dist
 
 # Features
 - [x] Zooming
+![zooming](https://github.com/Ramon96/frontend-data/blob/master/documantion/zooming.gif)
 - [x] Dragging
+![dragging](https://github.com/Ramon96/frontend-data/blob/master/documantion/dragging.gif)
 - [x] Hovering for tooltips
+![hovering](https://github.com/Ramon96/frontend-data/blob/master/documantion/hovering.gif)
 - [x] Filtering on category
+![filtering](https://github.com/Ramon96/frontend-data/blob/master/documantion/filtering.gif)
 
 # Known Bugs 
  * It might take a while for the map to load.
