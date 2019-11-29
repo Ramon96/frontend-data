@@ -3,6 +3,9 @@
 # Frontend Data
 ![Maskers op functie over de hele wereld](https://github.com/Ramon96/frontend-data/blob/master/documantion/demo.gif)
 
+# link to live demo
+https://frontend-data-ramon.netlify.com/
+
 # Concept
 This is an iteration of my previous concept of functional-programming. During that project I made an static map that shows the locations of mask with functions. During this project I plan on adding interaction in a way that people intrested in the data are able to analyze it and find intresting pattern's.
 
@@ -72,7 +75,7 @@ Please check out my [Wiki](https://github.com/Ramon96/frontend-data/wiki)
 # Data
  The data used in this project is data acuired from the NMVW database collection with the use of Sparql.
  I am getting the Mask by function. They also require to have a lat and long value. 
- For mor information about the Data check out [this]() wiki page.
+ For mor information about the Data check out [this](https://github.com/Ramon96/frontend-data/wiki/1.3-De--sparql-Query) wiki page.
 
 # License
 [MIT @ Ramon Meijers](https://github.com/Ramon96/frontend-data/blob/master/LICENSE)
